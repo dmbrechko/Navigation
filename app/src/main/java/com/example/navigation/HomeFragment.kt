@@ -17,12 +17,6 @@ import kotlinx.serialization.json.encodeToJsonElement
 
 class HomeFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val json = Json.encodeToString(One(1))
-        val one = Json.decodeFromString<One>(json)
-    }
-
     private lateinit var binding: FragmentHomeBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
