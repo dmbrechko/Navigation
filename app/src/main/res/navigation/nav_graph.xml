@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.navigation.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/show_red"
+            app:destination="@id/redFragment" />
+        <action
+            android:id="@+id/show_green"
+            app:destination="@id/greenFragment" />
+        <action
+            android:id="@+id/show_yellow"
+            app:destination="@id/yellowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/greenFragment"
+        android:name="com.example.navigation.GreenFragment"
+        android:label="GreenFragment" />
+    <fragment
+        android:id="@+id/redFragment"
+        android:name="com.example.navigation.RedFragment"
+        android:label="RedFragment" />
+    <fragment
+        android:id="@+id/yellowFragment"
+        android:name="com.example.navigation.YellowFragment"
+        android:label="YellowFragment" />
+</navigation>
