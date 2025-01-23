@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -35,6 +35,15 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            toolbar.inflateMenu(R.menu.menu_exit)
+            toolbar.setOnMenuItemClickListener { item ->
+                if (item.itemId == R.id.menu_exit) {
+                    requireActivity().finish()
+                    true
+                } else {
+                    false
+                }
+            }
             redTV.setOnClickListener {
                 val extras = FragmentNavigatorExtras(redTV to "red")
                 findNavController().navigate(HomeFragmentDirections.showRed(), extras)
@@ -50,6 +59,3 @@ class HomeFragment : Fragment() {
         }
     }
 }
-
-@Serializable
-data class One(val a: Int)

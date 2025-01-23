@@ -33,6 +33,15 @@ class GreenFragment : Fragment() {
         toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
+        toolbar.inflateMenu(R.menu.menu_exit)
+        toolbar.setOnMenuItemClickListener { item ->
+            if (item.itemId == R.id.menu_exit) {
+                requireActivity().finish()
+                true
+            } else {
+                false
+            }
+        }
     }
 }
 
